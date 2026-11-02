@@ -1,0 +1,7 @@
+description = "Art-director critique of the latest smoke screenshots"
+prompt = """
+@art-director Review these gameplay screenshots. Extra question from the developer (may be empty): {{args}}
+
+@{build/shots/smoke.png}
+@{build/shots/smoke_000300.png}
+"""

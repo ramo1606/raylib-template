@@ -1,0 +1,28 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install zig
+        run: pip install ziglang && printf '#!/bin/sh\nexec python3 -m ziglang "$@"\n' | sudo tee /usr/local/bin/zig && sudo chmod +x /usr/local/bin/zig
+      - name: Fetch pinned dependencies
+        run: sh tools/fetch_deps.sh
+      - name: Unit tests + headless smoke
+        run: make check
+      - name: Soak 10 seeds
+        run: for s in 1 2 3 4 5 6 7 8 9 10; do ./build/headless-debug/game --autoplay --seed $s --frames 3600 | grep SMOKE; done
+      - name: Windows release (cross-compiled)
+        run: make dist TARGET=windows
+      - uses: actions/upload-artifact@v4
+        with:
+          name: shots-and-windows-build
+          path: |
+            build/shots/
+            build/dist/windows/

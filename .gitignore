@@ -1,0 +1,17 @@
+build/
+vendor/
+compile_commands.json
+*.o
+*.d
+.DS_Store
+
+# Steam: never commit credentials or the SDK itself
+steam/sdk/
+steam/output/
+steam/config.vdf
+
+# Claude Code / Gemini local-only files
+.claude/settings.local.json
+.claude/agent-memory-local/
+CLAUDE.local.md
+.gemini/.env

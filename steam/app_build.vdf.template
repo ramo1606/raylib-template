@@ -1,0 +1,13 @@
+"AppBuild"
+{
+	"AppID" "<appid>"
+	"Desc" "vX.Y.Z <git sha>"
+	"ContentRoot" "../build/dist/"
+	"BuildOutput" "./output/"
+	"SetLive" ""
+	"Depots"
+	{
+		"<appid+1>" "depot_windows.vdf"
+		"<appid+2>" "depot_linux.vdf"
+	}
+}

@@ -1,0 +1,7 @@
+description = "Whole-repo read-only audit (optionally focused on a topic)"
+prompt = """
+@codebase-auditor Audit this repository. Focus (may be empty): {{args}}
+
+Recent history for context:
+!{git log --oneline -15}
+"""

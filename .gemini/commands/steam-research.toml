@@ -1,0 +1,6 @@
+description = "Steam comparables, pricing and positioning for the current pitch"
+prompt = """
+@market-analyst Research the Steam market for the game described below. Extra focus (may be empty): {{args}}
+
+@{docs/design/pitch.md}
+"""

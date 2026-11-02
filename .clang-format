@@ -1,0 +1,14 @@
+# raylib-like style: 4 spaces, Allman braces for functions and control blocks.
+BasedOnStyle: LLVM
+IndentWidth: 4
+ColumnLimit: 140
+BreakBeforeBraces: Allman
+AllowShortIfStatementsOnASingleLine: WithoutElse
+AllowShortBlocksOnASingleLine: Always
+AllowShortFunctionsOnASingleLine: All
+AllowShortCaseLabelsOnASingleLine: true
+PointerAlignment: Right
+SortIncludes: Never
+SpaceAfterCStyleCast: false
+IndentCaseLabels: true
+AlignConsecutiveMacros: true
